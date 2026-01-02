@@ -55,6 +55,15 @@ public class Board {
         return true;
     }
 
+    public CellValue getCellValue(int row, int col) {
+        checkRange(row, col);
+        return cells[row][col];
+    }
+
+    public int getSize() {
+        return n;
+    }
+
 
     private boolean isCellEmpty(int row, int col) {
         return cells[row][col] == CellValue.EMPTY;
