@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Board {
@@ -62,6 +64,19 @@ public class Board {
 
     public int getSize() {
         return n;
+    }
+
+    public List<Move> getAvailableMoves() {
+        List<Move> availableMoves = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (cells[i][j] == CellValue.EMPTY) {
+                    availableMoves.add(new Move(i, j));
+                }
+            }
+        }
+
+        return availableMoves;
     }
 
 
