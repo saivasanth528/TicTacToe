@@ -10,11 +10,12 @@ public class ConsoleView {
 
     public void renderBoard(Board board) {
         int n = board.getSize();
+        System.out.println();
         for (int i = 0; i < n; i++) {
-            System.out.println();
             for (int j = 0; j < n; j++) {
-                System.out.print(board.getCellValue(i, j).toChar() + " ");
+                System.out.print(board.getCellValue(i, j).toChar() + "|");
             }
+            System.out.println();
         }
     }
 
@@ -34,6 +35,16 @@ public class ConsoleView {
         }
 
     }
+
+    public void printText(String text) {
+        System.out.println(text);
+    }
+
+    public int askInt(String prompt) {
+        printText(prompt);
+        return scanner.nextInt();
+    }
+
 
 
 }

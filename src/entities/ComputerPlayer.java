@@ -16,7 +16,7 @@ public class ComputerPlayer implements Player {
 
     @Override
     public CellValue getSymbol() {
-        return null;
+        return this.cellValue;
     }
 
     @Override

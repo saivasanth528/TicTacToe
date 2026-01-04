@@ -29,7 +29,7 @@ public class Board {
         }
     }
 
-    private void applyMove(int row , int col, CellValue value) {
+    public void applyMove(int row , int col, CellValue value) {
         checkRange(row, col);
         if (!isCellEmpty(row, col)) {
             throw new IllegalArgumentException("Cell is already occupied");
@@ -46,7 +46,7 @@ public class Board {
         cells[lastMove.row()][lastMove.col()] = CellValue.EMPTY;
     }
 
-    boolean isFull() {
+    public boolean isFull() {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (isCellEmpty(i, j)) {
